@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inside the Feed | Media & Information Literacy</title>
+<style>
+:root{
+  --bg:#f4f0e8;--paper:#fffdf8;--ink:#202020;--muted:#68645c;
+  --accent:#e86b3f;--accent2:#1e6f68;--line:#ddd5c7;--dark:#202322;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{min-height:100vh;background:var(--dark);color:#fff;display:flex;align-items:center;position:relative;overflow:hidden}
+header:before{content:"";position:absolute;width:480px;height:480px;border:2px solid rgba(255,255,255,.15);border-radius:50%;right:-120px;top:-100px}
+header:after{content:"";position:absolute;width:280px;height:280px;background:var(--accent);border-radius:50%;right:80px;bottom:-130px;opacity:.8}
+.hero{width:min(1150px,92%);margin:auto;position:relative;z-index:2}
+.kicker{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:#f5b19a;font-weight:800}
+h1{font-size:clamp(4rem,11vw,9rem);line-height:.82;letter-spacing:-.075em;margin:22px 0;max-width:900px}
+.hero p{max-width:650px;color:#ddd;font-size:1.1rem}
+.cta{display:inline-block;margin-top:20px;background:var(--accent);padding:13px 20px;border-radius:5px;font-weight:800}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{width:min(1150px,92%);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:13px 0}
+.logo{font-weight:900;letter-spacing:-.03em}.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:5px;flex-wrap:wrap}
+.navlinks a{font-size:.82rem;padding:7px 10px;border-radius:4px;color:var(--muted)}
+.navlinks a:hover{background:#ebe4d8;color:var(--ink)}
+.menu-toggle{display:none;border:1px solid var(--line);background:var(--paper);padding:8px 12px;font-weight:800;color:var(--ink);border-radius:4px}
+.hero-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center}
+.hero-art{position:relative;min-height:390px;border-radius:22px;overflow:hidden;background:linear-gradient(145deg,rgba(20,40,38,.12),rgba(20,40,38,.8)),url(https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85) center/cover;box-shadow:0 25px 70px rgba(0,0,0,.25)}
+.hero-sticker{position:absolute;left:22px;bottom:22px;background:#fffdf8;color:var(--ink);padding:17px 20px;border-radius:12px;font-weight:900;max-width:230px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.hero-sticker span{display:block;color:var(--accent2);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.media-card{border-radius:12px;box-shadow:0 8px 22px rgba(50,40,20,.05);transition:transform .2s,box-shadow .2s}
+.media-card:hover{transform:translateY(-5px);box-shadow:0 16px 32px rgba(50,40,20,.12)}
+.media-image{height:145px;margin:-25px -25px 18px;background-size:cover;background-position:center;border-radius:11px 11px 0 0;position:relative}
+.media-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,25,24,.35),transparent)}
+.media-icon{position:absolute;z-index:2;left:16px;bottom:12px;width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:#fffdf8;font-size:1.45rem;box-shadow:0 5px 15px rgba(0,0,0,.18)}
+.media-card .tag{margin-top:0}
+.section-banner{margin-top:28px;border-radius:14px;min-height:210px;padding:28px;color:white;display:flex;align-items:end;background:linear-gradient(90deg,rgba(20,30,29,.85),rgba(20,30,29,.08)),url(https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1400&q=85) center/cover}
+.section-banner h3{font-size:1.8rem;max-width:500px;margin:0}
+.ethic .ethic-icon{font-size:1.8rem;line-height:1}
+.sources .paper{border-radius:10px}
+.source-icon{font-size:2rem;margin-bottom:8px}
+footer a{color:#f5b19a;text-decoration:underline}
+section{width:min(1150px,92%);margin:auto;padding:90px 0}
+.sectiontag{color:var(--accent2);font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;font-weight:900}
+h2{font-size:clamp(2.5rem,6vw,5rem);line-height:.95;letter-spacing:-.06em;margin:12px 0 25px}
+h3{margin:8px 0}
+.intro{max-width:700px;color:var(--muted);font-size:1.05rem}
+.paper{background:var(--paper);border:1px solid var(--line);padding:30px;box-shadow:0 10px 30px rgba(50,40,20,.06)}
+.media-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.media-card{min-height:210px;background:var(--paper);border:1px solid var(--line);padding:25px;position:relative;overflow:hidden}
+.media-card .num{font-size:4rem;font-weight:900;color:#e9e1d4;position:absolute;right:10px;top:0}
+.media-card p{color:var(--muted)}
+.tag{display:inline-block;background:#e7f0ee;color:var(--accent2);font-size:.72rem;font-weight:800;padding:5px 8px;border-radius:3px}
+.feed{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}
+.phone{background:#151716;color:white;border-radius:25px;padding:16px;max-width:330px;margin:auto;width:100%}
+.screen{background:linear-gradient(145deg,#2d3330,#173e3b);border-radius:18px;padding:22px;min-height:500px;display:flex;flex-direction:column;justify-content:flex-end}
+.fakepost{background:rgba(255,255,255,.12);padding:18px;border-radius:15px;margin-top:15px}
+.fakepost small{color:#c9d5d1}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.step{background:var(--dark);color:white;padding:24px;min-height:190px}
+.step strong{font-size:2rem;color:#f5b19a}
+.choice{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:25px}
+.choice button{border:1px solid var(--line);background:var(--paper);padding:22px;text-align:left;cursor:pointer;font:inherit}
+.choice button:hover{border-color:var(--accent);transform:translateY(-2px)}
+.result{margin-top:15px;padding:18px;background:#eef4f2;border-left:4px solid var(--accent2);display:none}
+.influence{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+.bar{margin:18px 0}.bar-label{display:flex;justify-content:space-between;font-weight:700}
+.track{height:12px;background:#e4ddd1;margin-top:7px}.fill{height:100%;background:var(--accent)}
+.ethics{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.ethic{background:var(--paper);border:1px solid var(--line);padding:20px;display:flex;gap:15px}
+.ethic b{color:var(--accent)}
+.reflection{background:var(--dark);color:#fff;padding:45px}
+.reflection p{color:#ddd;max-width:800px}
+textarea,input{width:100%;padding:13px;border:1px solid #cbc3b5;background:#fffdf8;font:inherit;margin:7px 0 15px}
+textarea{min-height:160px}
+button.primary{background:var(--accent);color:#fff;border:0;padding:12px 18px;font-weight:800;cursor:pointer}
+.sources{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.sources .paper a{color:var(--accent2);font-weight:800}
+footer{background:#171918;color:#bbb;padding:45px 0}
+footer .foot{width:min(1150px,92%);margin:auto}
+@media(max-width:800px){
+ .nav{flex-wrap:wrap}.menu-toggle{display:block}.navlinks{display:none;width:100%;padding:10px 0;flex-direction:column}.navlinks.open{display:flex}.navlinks a{padding:10px}.hero-layout{grid-template-columns:1fr}.hero-art{min-height:260px}.media-grid,.sources,.ethics,.choice,.feed,.influence{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr 1fr}h1{font-size:5rem}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="hero hero-layout">
+   <div>
+    <div class="kicker">Grade 12 · Media and Information Literacy</div>
+    <h1>INSIDE<br>THE FEED.</h1>
+    <p>A digital journey through the media we use, the information we encounter, and the choices we make before we believe, create, or share.</p>
+    <p><strong>Group:</strong> JHCAD MEDIA COLLECTIVE<br><strong>Members:</strong> JHONNA MAE TURADO · CHLOE JANE NABOR · HAZEL JANE CAGAS · ANTHONY JAMES OMANDAM · CHRISTIAN DAVE SANCHEZ</p>
+    <a class="cta" href="#start">Start the Journey ↓</a>
+   </div>
+   <div class="hero-art" role="img" aria-label="Students using digital media and technology">
+    <div class="hero-sticker"><span>Scroll smarter</span>Pause. Check. Think. Share responsibly.</div>
+   </div>
+  </div>
+</header>
+
+<nav>
+ <div class="nav">
+  <a class="logo" href="#top">INSIDE <span>THE FEED</span></a>
+  <button class="menu-toggle" aria-label="Open navigation" onclick="toggleMenu()">☰ MENU</button>
+  <div class="navlinks" id="navlinks">
+   <a href="#media">Media World</a>
+   <a href="#feed">Inside a Post</a>
+   <a href="#process">Information Trail</a>
+   <a href="#influence">Influence</a>
+   <a href="#ethics">Create</a>
+   <a href="#reflection">Takeaway</a>
+  </div>
+ </div>
+</nav>
+
+<main id="start">
+
+<section id="media">
+ <div class="sectiontag">01 — Our Media World</div>
+ <h2>Where does information live?</h2>
+ <p class="intro">Media is part of everyday life. We encounter it while studying, traveling, talking with friends, watching videos, reading news, and scrolling online. Each medium communicates differently.</p>
+ <div class="media-grid">
+  <article class="media-card"><div class="media-image" style="background-image:url(https://images.unsplash.com/photo-1504711434969-e33886168c5?auto=format&fit=crop&w=800&q=80)"><span class="media-icon">📰</span></div><span class="tag">READ</span><div class="num">01</div><h3>Print</h3><p>Books, newspapers, magazines, brochures, and other physical publications.</p></article>
+  <article class="media-card"><div class="media-image" style="background-image:url(https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=80)"><span class="media-icon">📺</span></div><span class="tag">WATCH / LISTEN</span><div class="num">02</div><h3>Broadcast</h3><p>Television and radio that deliver information to audiences through scheduled programs.</p></article>
+  <article class="media-card"><div class="media-image" style="background-image:url(https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80)"><span class="media-icon">💻</span></div><span class="tag">SEARCH</span><div class="num">03</div><h3>Digital</h3><p>Websites, online articles, email, e-books, and other electronically delivered information.</p></article>
+  <article class="media-card"><div class="media-image" style="background-image:url(https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=800&q=80)"><span class="media-icon">🌐</span></div><span class="tag">INTERACT</span><div class="num">04</div><h3>Social / New Media</h3><p>Platforms where users can consume, create, comment, remix, and share content.</p></article>
+  <article class="media-card"><div class="media-image" style="background-image:url(https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80)"><span class="media-icon">🎬</span></div><span class="tag">EXPERIENCE</span><div class="num">05</div><h3>Film & Video</h3><p>Stories, documentaries, educational videos, and visual narratives using moving images and sound.</p></article>
+  <article class="media-card"><div class="media-image" style="background-image:url(https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80)"><span class="media-icon">🪧</span></div><span class="tag">NOTICE</span><div class="num">06</div><h3>Outdoor</h3><p>Billboards, posters, signs, banners, and public displays placed in shared spaces.</p></article>
+ </div>
+ <div class="section-banner"><h3>Every platform tells a story. Learn to question what you see.</h3></div>
+</section>
+
+<section id="feed">
+ <div class="sectiontag">02 — Inside a Post</div>
+ <h2>Not everything on your screen is the whole story.</h2>
+ <div class="feed">
+  <div class="phone">
+   <div class="screen">
+    <span class="tag" style="width:max-content;background:#e86b3f;color:#fff">TRENDING VIDEO</span>
+    <h2 style="font-size:2.3rem;color:#fff;margin:12px 0">“Classes are cancelled tomorrow!”</h2>
+    <div class="fakepost"><small>@randomaccount · 2h ago</small><br><br>“Share this now so everyone knows!”</div>
+   </div>
+  </div>
+  <div class="paper">
+   <span class="tag">CASE STUDY</span>
+   <h3>A viral post appears on your feed.</h3>
+   <p>It looks convincing. Many people have already shared it. What should you do?</p>
+   <div class="choice">
+    <button onclick="showChoice(1)">A. Share it immediately<br><small>Everyone should know.</small></button>
+    <button onclick="showChoice(2)">B. Check before sharing<br><small>Find the original information.</small></button>
+    <button onclick="showChoice(3)">C. Comment that it is fake<br><small>Even without checking.</small></button>
+    <button onclick="showChoice(4)">D. Ignore every post<br><small>Never trust social media.</small></button>
+   </div>
+   <div id="choiceResult" class="result"></div>
+  </div>
+ </div>
+</section>
+
+<section id="process">
+ <div class="sectiontag">03 — The Information Trail</div>
+ <h2>Follow the trail, not the crowd.</h2>
+ <p class="intro">A responsible media user does not judge information only by likes, views, or comments. Follow the information back to its source.</p>
+ <div class="steps">
+  <div class="step"><strong>01</strong><h3>STOP</h3><p>Pause before reacting or sharing.</p></div>
+  <div class="step"><strong>02</strong><h3>TRACE</h3><p>Find who created the claim and where it started.</p></div>
+  <div class="step"><strong>03</strong><h3>COMPARE</h3><p>Look for the same information from credible, independent sources.</p></div>
+  <div class="step"><strong>04</strong><h3>DECIDE</h3><p>Share only when the information is supported and useful.</p></div>
+ </div>
+ <div class="paper" style="margin-top:18px">
+  <h3>Quick credibility questions</h3>
+  <p>Who is the author? When was it published? What evidence is provided? Is the source qualified? Does another reliable source confirm it? Is important context missing?</p>
+ </div>
+</section>
+
+<section id="influence">
+ <div>
+  <div class="sectiontag">04 — Media Influence</div>
+  <h2>Media does more than inform us.</h2>
+  <p class="intro">Media can influence what we notice, what we discuss, what we buy, and how we understand events. Its influence can be helpful, but it can also create pressure or confusion.</p>
+  <div class="bar"><div class="bar-label"><span>Awareness</span><span>HIGH</span></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+  <div class="bar"><div class="bar-label"><span>Connection</span><span>HIGH</span></div><div class="track"><div class="fill" style="width:84%"></div></div></div>
+  <div class="bar"><div class="bar-label"><span>Learning</span><span>HIGH</span></div><div class="track"><div class="fill" style="width:80%"></div></div></div>
+  <div class="bar"><div class="bar-label"><span>Pressure / comparison</span><span>CAN BE HIGH</span></div><div class="track"><div class="fill" style="width:65%"></div></div></div>
+ </div>
+ <div class="paper">
+  <span class="tag">TIKTOK EXAMPLE</span>
+  <h3>Why TikTok matters in MIL</h3>
+  <p>TikTok is a form of new media where users can receive and create information. Educational videos can make concepts easier to understand, while misleading clips can spread quickly.</p>
+  <p><strong>Key lesson:</strong> popularity is not the same as credibility.</p>
+ </div>
+</section>
+
+<section id="ethics">
+ <div class="sectiontag">05 — Create Responsibly</div>
+ <h2>If you can post it, you can affect someone with it.</h2>
+ <p class="intro">Media literacy includes responsible creation. Before uploading, commenting, or forwarding something, consider its effect on other people.</p>
+ <div class="ethics">
+  <div class="ethic"><span class="ethic-icon">🔒</span><b>01</b><div><h3>Respect privacy</h3><p>Do not share someone's personal information or image without appropriate permission.</p></div></div>
+  <div class="ethic"><span class="ethic-icon">©️</span><b>02</b><div><h3>Credit creators</h3><p>Acknowledge sources and creators instead of presenting their work as your own.</p></div></div>
+  <div class="ethic"><span class="ethic-icon">🔎</span><b>03</b><div><h3>Check before sharing</h3><p>Do not help misinformation travel just because a post is interesting.</p></div></div>
+  <div class="ethic"><span class="ethic-icon">💭</span><b>04</b><div><h3>Think about impact</h3><p>Words, photos, videos, and comments can affect real people.</p></div></div>
+  <div class="ethic"><span class="ethic-icon">🤝</span><b>05</b><div><h3>Be respectful</h3><p>Disagree with ideas without attacking or humiliating people.</p></div></div>
+  <div class="ethic"><span class="ethic-icon">👣</span><b>06</b><div><h3>Protect your digital footprint</h3><p>Remember that online actions can become part of your long-term digital identity.</p></div></div>
+ </div>
+</section>
+
+<section id="reflection">
+ <div class="reflection">
+  <div class="sectiontag" style="color:#f5b19a">06 — My Takeaway</div>
+  <h2 style="color:#fff">What kind of media user am I?</h2>
+  <p>Media and information literacy is not simply knowing how to use technology. It is knowing how to question information, recognize its influence, communicate responsibly, and make thoughtful choices.</p>
+  <label for="name"><strong>Name</strong></label>
+  <input id="name" placeholder="Your name">
+  <label for="answer"><strong>Complete this thought: “After this activity, I realized that…”</strong></label>
+  <textarea id="answer" placeholder="Write your personal reflection here..."></textarea>
+  <button class="primary" onclick="saveReflection()">Save My Reflection</button>
+  <span id="saved" style="margin-left:10px"></span>
+ </div>
+</section>
+
+<section id="sources">
+ <div class="sectiontag">07 — Credits</div>
+ <h2>Sources & further reading.</h2>
+ <div class="sources">
+  <div class="paper"><div class="source-icon">🌍</div><h3>UNESCO</h3><p>Media and Information Literacy resources.</p><a href="https://www.unesco.org/en/media-information-literacy" target="_blank">Open source ↗</a></div>
+  <div class="paper"><div class="source-icon">🔍</div><h3>IFLA</h3><p>Resources for identifying and evaluating misinformation.</p><a href="https://www.ifla.org/publications/node/11174" target="_blank">Open source ↗</a></div>
+  <div class="paper"><div class="source-icon">🏛️</div><h3>Official Sources</h3><p>For current events and public announcements, consult appropriate official government or institutional sources.</p><a href="https://pia.gov.ph/" target="_blank">Philippine Information Agency ↗</a></div>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ <div class="foot">
+  <h3>INSIDE THE FEED</h3>
+  <p>Media & Information Literacy · Grade 12 Performance Task</p>
+  <p>Created by JHCAD MEDIA COLLECTIVE · JHONNA MAE TURADO · CHLOE JANE NABOR · HAZEL JANE CAGAS · ANTHONY JAMES OMANDAM · CHRISTIAN DAVE SANCHEZ</p><p>Photo visuals: Unsplash. Educational content references are listed above.</p>
+ </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById("navlinks").classList.toggle("open");}
+function showChoice(n){
+ const r=document.getElementById('choiceResult');
+ const messages={
+  1:"Not the safest choice. A post being urgent or popular does not prove that it is accurate.",
+  2:"Best choice. Pause, trace the original source, compare the claim with credible sources, and check the date and context before sharing.",
+  3:"Also risky. Calling something fake without checking can spread another unsupported claim.",
+  4:"Too extreme. Social media can contain useful information; the goal is to evaluate it, not automatically reject everything."
+ };
+ r.style.display='block';
+ r.innerHTML="<strong>"+messages[n]+"</strong>";
+}
+function saveReflection(){
+ const name=document.getElementById('name').value.trim()||"Student";
+ const answer=document.getElementById('answer').value.trim();
+ if(!answer){alert("Please write your reflection first.");return;}
+ const blob=new Blob([`INSIDE THE FEED\nName: ${name}\n\nReflection:
+${answer}`],{type:"text/plain"});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download="MIL_Reflection.txt";a.click();
+ document.getElementById('saved').textContent="Saved!";
+}
+</script>
+</body>
+</html>
