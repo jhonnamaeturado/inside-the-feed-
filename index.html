@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>INSIDE THE FEED</title>
+<style>
+:root{--c:#f7f0e4;--ink:#24211e;--o:#e86b32;--t:#267b78;--p:#fffaf1;--m:#756e64;--l:#d8cdbb}
+*{box-sizing:border-box;scroll-behavior:smooth}body{margin:0;background:var(--c);color:var(--ink);font-family:Arial,sans-serif}
+header{min-height:100vh;padding:25px 7%;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(135deg,var(--p),var(--c))}
+nav{display:flex;justify-content:space-between}nav a{margin-left:18px;color:var(--ink);text-decoration:none;font-weight:bold;font-size:13px}.logo{font-weight:900;letter-spacing:2px}.logo b{color:var(--o)}
+.hero{padding:45px 0}.eyebrow{font-size:12px;letter-spacing:3px;font-weight:900;color:var(--t)}
+h1{font-size:clamp(60px,13vw,150px);line-height:.78;letter-spacing:-7px;margin:20px 0}p{line-height:1.65;color:var(--m)}.hero p{max-width:650px;font-size:18px}
+.btn{display:inline-block;background:var(--ink);color:#fff;padding:15px 23px;border-radius:30px;text-decoration:none;font-weight:900}
+.ticker{border-top:2px solid var(--ink);padding:15px 0;display:flex;justify-content:space-between;font-size:12px;font-weight:bold}
+main{max-width:1200px;margin:auto;padding:80px 7%}section{margin-bottom:110px}.head{border-bottom:2px solid var(--ink);padding-bottom:16px;margin-bottom:28px;display:flex;justify-content:space-between;gap:25px;align-items:end}.head p{max-width:470px}h2{font-size:clamp(35px,5vw,70px);margin:0;letter-spacing:-2px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--p);border:1px solid var(--l);padding:25px;min-height:190px;transition:.2s}.card:hover{transform:translateY(-5px);box-shadow:9px 9px 0 var(--o)}.num{font-size:12px;color:var(--o);font-weight:900;letter-spacing:2px}.card h3{font-size:23px;margin-top:35px}
+.feature{background:var(--ink);color:#fff;padding:45px;display:grid;grid-template-columns:1fr 1fr;gap:30px}.feature p{color:#ddd}.choices{display:grid;gap:12px}.choice{padding:17px;border:1px solid #ffffff40;border-radius:12px;cursor:pointer}.choice:hover{background:var(--o)}
+.trail{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0}.step{padding:15px 20px;border:2px solid var(--ink);font-weight:900}.step:nth-child(even){background:var(--t);border-color:var(--t);color:white}
+.influence{display:grid;grid-template-columns:1fr 1fr;gap:18px}.quote{font-size:38px;font-weight:900;line-height:1.05;border-left:8px solid var(--t);padding-left:22px}.bar{margin:20px 0}.bar label{display:flex;justify-content:space-between;font-weight:bold}.track{height:13px;background:#ded5c7;margin-top:7px}.fill{height:100%;background:var(--o)}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{background:var(--p);padding:18px;border:1px solid var(--l);font-weight:bold}.check:before{content:"✓";color:var(--t);font-size:20px;margin-right:10px}
+.reflection{background:var(--t);padding:40px;color:white}.reflection p{color:white}.reflection textarea{width:100%;min-height:110px;padding:15px;border:0;font:inherit}.reflection button{padding:13px 20px;margin-top:10px;border:0;font-weight:bold}
+footer{background:var(--ink);color:#fff;padding:55px 7%;display:grid;grid-template-columns:2fr 1fr;gap:40px}footer p{color:#c9c1b5}footer a{color:white}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--t);color:#fff;padding:13px 20px;border-radius:25px;display:none;font-weight:bold}
+@media(max-width:800px){nav a{display:none}.grid,.feature,.influence,.checks,footer{grid-template-columns:1fr}h1{letter-spacing:-4px}.ticker{flex-wrap:wrap;gap:12px}}
+</style>
+</head>
+<body>
+<header>
+<nav><div class="logo">INSIDE <b>THE FEED.</b></div><div><a href="#media">MEDIA</a><a href="#post">POST</a><a href="#trail">TRAIL</a><a href="#create">CREATE</a></div></nav>
+<div class="hero"><div class="eyebrow">GRADE 12 · MEDIA AND INFORMATION LITERACY</div><h1>INSIDE<br>THE FEED.</h1><p>A digital journey through the media we use, the information we encounter, and the choices we make before we believe, create, or share.</p><a class="btn" href="#media">ENTER THE FEED ↓</a></div>
+<div class="ticker"><span>JHCAD MEDIA COLLECTIVE</span><span>THINK · CHECK · CREATE · SHARE</span><span>2026</span></div>
+</header>
+<main>
+<section id="media"><div class="head"><h2>01 / OUR MEDIA WORLD</h2><p>Media is everywhere. Different forms deliver information in different ways, but every form can shape what we notice and believe.</p></div>
+<div class="grid">
+<div class="card"><div class="num">01</div><h3>Print</h3><p>Newspapers, magazines, books, brochures, and other printed materials.</p></div>
+<div class="card"><div class="num">02</div><h3>Broadcast</h3><p>Television and radio bring news, entertainment, and public information to audiences.</p></div>
+<div class="card"><div class="num">03</div><h3>Digital</h3><p>Websites, online articles, apps, and platforms make information easy to access.</p></div>
+<div class="card"><div class="num">04</div><h3>Social / New Media</h3><p>Platforms where people create, react to, comment on, and share content.</p></div>
+<div class="card"><div class="num">05</div><h3>Film & Video</h3><p>Visual storytelling used for education, news, entertainment, and expression.</p></div>
+<div class="card"><div class="num">06</div><h3>Outdoor</h3><p>Billboards, posters, signs, and public displays in shared spaces.</p></div>
+</div></section>
+<section id="post"><div class="head"><h2>02 / INSIDE A POST</h2><p>One screenshot can travel fast. Your first reaction matters, but verification matters more.</p></div>
+<div class="feature"><div><div class="eyebrow" style="color:#f2a77f">VIRAL CASE STUDY</div><h2 style="font-size:42px;margin-top:15px">“Classes are cancelled tomorrow!”</h2><p>You see the message in a group chat. No official announcement is attached. What should you do?</p></div>
+<div class="choices"><div class="choice" onclick="answer('Sharing quickly can spread wrong information.')"><b>A.</b> Share immediately</div><div class="choice" onclick="answer('Good choice! Verify the source before sharing.')"><b>B.</b> Check before sharing</div><div class="choice" onclick="answer('A claim needs evidence before we label it fake.')"><b>C.</b> Comment that it is fake</div><div class="choice" onclick="answer('Ignoring everything does not help us become informed.')"><b>D.</b> Ignore every post</div></div></div></section>
+<section id="trail"><div class="head"><h2>03 / THE INFORMATION TRAIL</h2><p>Use a simple process before you trust or pass information to someone else.</p></div>
+<div class="trail"><div class="step">STOP</div><div class="step">TRACE</div><div class="step">COMPARE</div><div class="step">DECIDE</div></div>
+<div class="grid"><div class="card"><h3>STOP</h3><p>Pause before reacting. Ask if the post is trying to make you angry, scared, or excited.</p></div><div class="card"><h3>TRACE</h3><p>Find the original source. Who created it? When was it published?</p></div><div class="card"><h3>COMPARE</h3><p>Look for the same information from reliable and independent sources.</p></div><div class="card"><h3>DECIDE</h3><p>Then decide whether to believe, comment, save, or share it.</p></div></div></section>
+<section><div class="head"><h2>04 / MEDIA INFLUENCE</h2><p>Media can help us, connect us, teach us, and sometimes pressure us.</p></div>
+<div class="influence"><div class="card"><div class="quote">“Popularity is not the same as credibility.”</div><p>A post can have thousands of views and still contain incomplete or incorrect information.</p></div>
+<div class="card"><div class="bar"><label>Awareness <span>90%</span></label><div class="track"><div class="fill" style="width:90%"></div></div></div><div class="bar"><label>Connection <span>82%</span></label><div class="track"><div class="fill" style="width:82%"></div></div></div><div class="bar"><label>Learning <span>86%</span></label><div class="track"><div class="fill" style="width:86%"></div></div></div><div class="bar"><label>Pressure / Comparison <span>68%</span></label><div class="track"><div class="fill" style="width:68%"></div></div></div></div></div></section>
+<section id="create"><div class="head"><h2>05 / CREATE RESPONSIBLY</h2><p>Media literacy is also about how we behave when we create and share.</p></div>
+<div class="checks"><div class="check">Respect other people's privacy</div><div class="check">Give credit to creators</div><div class="check">Check information before sharing</div><div class="check">Think about possible impact</div><div class="check">Use respectful language</div><div class="check">Protect your digital footprint</div></div></section>
+<section><div class="head"><h2>06 / MY TAKEAWAY</h2><p>Write one thing you learned about being a responsible media and information user.</p></div>
+<div class="reflection"><h2 style="font-size:40px">What will you do differently online?</h2><p style="color:white">Your reflection stays in this page during your session.</p><textarea id="r" placeholder="Type your reflection here..."></textarea><br><button onclick="save()">SAVE MY TAKEAWAY</button></div></section>
+</main>
+<footer><div><div class="logo">INSIDE <b>THE FEED.</b></div><p>A Media and Information Literacy performance task by the JHCAD MEDIA COLLECTIVE.</p><p><b>Members:</b> Jhonna Mae Turado · Chloe Jane Nabor · Hazel Jane Cagas · Anthony James Omandam · Christian Dave Sanchez</p></div>
+<div><b>CREDITS & REFERENCES</b><p><a href="https://www.unesco.org/en/media-information-literacy">UNESCO — Media and Information Literacy</a><br><a href="https://www.ifla.org/publications/node/11174">IFLA — How to Spot Fake News</a><br><a href="https://pia.gov.ph/">Philippine Information Agency</a></p></div></footer>
+<div class="toast" id="toast"></div>
+<script>function answer(x){let t=document.getElementById('toast');t.textContent=x;t.style.display='block';setTimeout(()=>t.style.display='none',2500)}function save(){answer(document.getElementById('r').value.trim()?'Your takeaway is saved for this session!':'Write your takeaway first.')}</script>
+</body></html>
